@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#07132f" name="theme-color"/>
+  <title>
+   For Elizabeth, My Queen ✦
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
+    --bg:#050b1c;
+    --panel:rgba(12,29,62,.78);
+    --line:rgba(180,207,255,.18);
+    --muted:#a9bddf;
+    --ice:#dceaff;
+    --gold:#e8d19a
+}
+* {
+    box-sizing:border-box
+}
+html {
+    scroll-behavior:smooth
+}
+body {
+    margin:0;
+    color:#f4f7ff;
+    font-family:"DM Sans",sans-serif;
+    background:radial-gradient(ellipse at 15% 12%,#1a3670 0,transparent 35%),radial-gradient(ellipse at 85% 35%,#38215f 0,transparent 32%),linear-gradient(145deg,#030817,#081633 52%,#050b1c);
+    overflow-x:hidden
+}
+body:before {
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    opacity:.55;
+    background-image:radial-gradient(1px 1px at 8% 18%,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 22% 76%,#bcd8ff 98%,transparent),radial-gradient(1px 1px at 39% 32%,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 61% 14%,#d9caff 98%,transparent),radial-gradient(1px 1px at 79% 68%,#fff 98%,transparent);
+    background-size:370px 330px
+}
+.wrap {
+    width:min(1080px,calc(100% - 36px));
+    margin:auto
+}
+.serif {
+    font-family:"Playfair Display",Georgia,serif
+}
+.eyebrow {
+    color:#9dbdf2;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:.68rem;
+    font-weight:700
+}
+.muted {
+    color:var(--muted);
+    line-height:1.85
+}
+button,.btn {
+    border:1px solid rgba(210,226,255,.25);
+    cursor:pointer;
+    color:white;
+    font:600 .9rem "DM Sans",sans-serif;
+    border-radius:999px;
+    padding:14px 22px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    background:linear-gradient(110deg,#244f9c,#684bb0);
+    box-shadow:0 10px 30px #3051a633;
+    transition:.2s
+}
+button:hover,.btn:hover {
+    transform:translateY(-2px);
+    filter:brightness(1.12)
+}
+button:focus-visible,a:focus-visible {
+    outline:3px solid #c6dcff;
+    outline-offset:4px
+}
+.welcome {
+    min-height:100svh;
+    display:grid;
+    place-items:center;
+    padding:24px 16px
+}
+.welcome-card {
+    width:min(560px,100%);
+    text-align:center;
+    padding:clamp(28px,6vw,56px);
+    border:1px solid rgba(183,207,255,.24);
+    border-radius:30px;
+    background:linear-gradient(145deg,rgba(17,39,81,.88),rgba(8,18,43,.86));
+    box-shadow:0 30px 100px #0007,inset 0 1px #ffffff14;
+    backdrop-filter:blur(18px)
+}
+.crown {
+    font-size:2.8rem;
+    display:block;
+    margin-bottom:14px
+}
+.welcome h1 {
+    font-size:clamp(2.7rem,9vw,4.8rem);
+    line-height:1.05;
+    font-weight:500;
+    margin:15px 0
+}
+.welcome p {
+    max-width:390px;
+    margin:auto
+}
+.progress {
+    height:4px;
+    background:#ffffff1a;
+    border-radius:99px;
+    margin:28px 0 12px;
+    overflow:hidden
+}
+.progress span {
+    display:block;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,#5d8de8,#d2b7ff)
+}
+.tiny {
+    color:#9fb8e3;
+    font-size:.72rem;
+    letter-spacing:.08em
+}
+.welcome button {
+    width:100%;
+    margin-top:22px
+}
+#experience {
+    display:none;
+    animation:up .8s ease both
+}
+@keyframes up {
+    from {
+        opacity:0;
+        transform:translateY(18px)
+    }
+    to {
+        opacity:1;
+        transform:none
+    }
+}
+nav {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    padding:24px 0
+}
+.brand {
+    font:1.1rem "Playfair Display",serif;
+    color:#dbe8ff
+}
+.navlinks {
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap
+}
+.navlinks a {
+    font-size:.76rem;
+    color:#b9cbed;
+    text-decoration:none
+}
+.hero {
+    min-height:70vh;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:42px;
+    align-items:center;
+    padding:48px 0 80px
+}
+.hero h2 {
+    font-size:clamp(2.8rem,6vw,5.5rem);
+    line-height:1.02;
+    font-weight:500;
+    margin:17px 0
+}
+.hero h2 em {
+    color:#a9c9ff
+}
+.hero-copy {
+    max-width:530px
+}
+.actions {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px
+}
+.outline {
+    background:#ffffff09;
+    box-shadow:none
+}
+.portrait {
+    width:100%;
+    max-width:430px;
+    justify-self:center;
+    padding:11px;
+    border-radius:27px;
+    border:1px solid #bed6ff44;
+    background:linear-gradient(145deg,#4769ab44,#ffffff08);
+    transform:rotate(1deg)
+}
+.portrait img {
+    display:block;
+    width:100%;
+    height:510px;
+    object-fit:cover;
+    object-position:center 35%;
+    border-radius:18px
+}
+.caption {
+    text-align:center;
+    padding:13px 4px 2px;
+    color:#c7d9f7;
+    font:italic 1rem "Playfair Display",serif
+}
+section.content {
+    padding:72px 0;
+    border-top:1px solid var(--line)
+}
+.heading {
+    text-align:center;
+    margin-bottom:34px
+}
+.heading h3 {
+    font:500 clamp(2rem,5vw,3.3rem) "Playfair Display",serif;
+    margin:12px 0
+}
+.heading p {
+    max-width:620px;
+    margin:auto
+}
+.letter {
+    max-width:790px;
+    margin:auto;
+    padding:clamp(24px,5vw,50px);
+    border-radius:25px;
+    border:1px solid var(--line);
+    background:linear-gradient(145deg,#142b55bb,#071127cc);
+    box-shadow:0 25px 70px #0003
+}
+.letter h4 {
+    color:#c5d9ff;
+    font:italic 1.8rem "Playfair Display",serif;
+    margin:0 0 18px
+}
+.letter p {
+    color:#d1def3;
+    line-height:1.95;
+    margin:0 0 14px
+}
+.signature {
+    color:var(--gold);
+    font:italic 1.4rem "Playfair Display",serif;
+    margin-top:22px
+}
+.grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px
+}
+.card,.video-card,.gift {
+    border:1px solid var(--line);
+    border-radius:23px;
+    background:var(--panel);
+    box-shadow:0 18px 60px #0003;
+    overflow:hidden
+}
+.card {
+    padding:28px
+}
+.card h4 {
+    font:500 1.8rem "Playfair Display",serif;
+    margin:10px 0
+}
+.quote {
+    color:#d8e6ff;
+    font:italic 1.3rem/1.6 "Playfair Display",serif
+}
+.video-card {
+    padding:11px
+}
+.video-card video {
+    width:100%;
+    max-height:570px;
+    display:block;
+    border-radius:16px;
+    background:#020611
+}
+.video-caption {
+    padding:13px 8px 4px;
+    color:#b9cbed;
+    font-size:.82rem
+}
+.gift {
+    max-width:750px;
+    margin:auto;
+    text-align:center;
+    padding:clamp(28px,6vw,55px);
+    background:radial-gradient(ellipse at 50% 0%,#466bbe40,transparent 65%),#091836cc
+}
+.gift-icon {
+    font-size:3rem
+}
+.gift h3 {
+    font:500 clamp(2rem,5vw,3.2rem) "Playfair Display",serif;
+    margin:10px 0
+}
+.reveal {
+    display:none;
+    margin:24px auto 0;
+    max-width:550px;
+    padding:24px;
+    border-radius:18px;
+    background:#96b9ff17;
+    border:1px solid var(--line);
+    animation:up .5s ease
+}
+.reveal p {
+    color:#dce8ff;
+    line-height:1.9
+}
+.music {
+    position:fixed;
+    z-index:10;
+    bottom:16px;
+    left:50%;
+    transform:translateX(-50%);
+    display:none;
+    align-items:center;
+    gap:12px;
+    width:min(350px,calc(100% - 28px));
+    padding:9px 12px;
+    border-radius:999px;
+    border:1px solid #c0d7ff3b;
+    background:#050e22e8;
+    backdrop-filter:blur(18px);
+    box-shadow:0 12px 40px #0006
+}
+.disc {
+    width:37px;
+    height:37px;
+    flex:none;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#477bd0,#7656b8)
+}
+.music-info {
+    flex:1;
+    min-width:0
+}
+.music-info strong {
+    display:block;
+    font-size:.75rem
+}
+.music-info span {
+    display:block;
+    color:#9fb6dc;
+    font-size:.65rem;
+    margin-top:3px
+}
+.music button {
+    padding:10px 13px;
+    min-width:76px;
+    font-size:.74rem
+}
+footer {
+    text-align:center;
+    padding:58px 0 105px;
+    color:#8fa8d2;
+    font-size:.78rem
+}
+.toast {
+    position:fixed;
+    z-index:20;
+    left:50%;
+    bottom:86px;
+    transform:translate(-50%,12px);
+    opacity:0;
+    pointer-events:none;
+    background:#142d58;
+    border:1px solid var(--line);
+    color:#e5efff;
+    border-radius:12px;
+    padding:12px 15px;
+    font-size:.78rem;
+    transition:.25s;
+    width:max-content;
+    max-width:calc(100% - 28px);
+    text-align:center
+}
+.toast.show {
+    opacity:1;
+    transform:translate(-50%,0)
+}
+@media(max-width:760px) {
+    .wrap {
+        width:calc(100% - 30px)
+    }
+    nav {
+        align-items:flex-start
+    }
+    .navlinks {
+        gap:11px;
+        justify-content:flex-end
+    }
+    .navlinks a {
+        font-size:.68rem
+    }
+    .hero {
+        grid-template-columns:1fr;
+        gap:30px;
+        text-align:center;
+        padding:42px 0 62px
+    }
+    .hero-copy {
+        margin:auto
+    }
+    .actions {
+        justify-content:center
+    }
+    .portrait {
+        max-width:350px
+    }
+    .portrait img {
+        height:430px
+    }
+    .grid {
+        grid-template-columns:1fr
+    }
+    section.content {
+        padding:60px 0
+    }
+}
+@media(max-width:420px) {
+    .brand {
+        font-size:.92rem
+    }
+    .navlinks {
+        gap:8px
+    }
+    .navlinks a {
+        font-size:.62rem
+    }
+    .hero h2 {
+        font-size:2.7rem
+    }
+    .portrait img {
+        height:390px
+    }
+}
+  </style>
+ </head>
+ <body>
+  <main>
+   <section class="welcome" id="welcome">
+    <div class="welcome-card">
+     <span class="crown">
+      ♛
+     </span>
+     <div class="eyebrow">
+      A little surprise for someone special
+     </div>
+     <h1 class="serif">
+      Elizabeth,
+      <br/>
+      <em style="color:#b9d2ff">
+       My Queen
+      </em>
+     </h1>
+     <p class="muted">
+      I may be late, but celebrating you is still very much on my mind. I made something just for you.
+     </p>
+     <div class="progress">
+      <span>
+      </span>
+     </div>
+     <div class="tiny">
+      ROYAL BIRTHDAY MODE &middot; READY
+     </div>
+     <button id="enter">
+      Open your royal surprise ✦
+     </button>
+    </div>
+   </section>
+   <div id="experience">
+    <div class="wrap">
+     <nav>
+      <div class="brand">
+       ✦ The Royal Edition
+      </div>
+      <div class="navlinks">
+       <a href="#apology">
+        A note
+       </a>
+       <a href="#story">
+        Our story
+       </a>
+       <a href="#video">
+        A moment
+       </a>
+       <a href="#gift">
+        Your gift
+       </a>
+      </div>
+     </nav>
+     <header class="hero">
+      <div class="hero-copy">
+       <div class="eyebrow">
+        To the one and only
+       </div>
+       <h2 class="serif">
+        Happy Birthday,
+        <br/>
+        <em>
+         Elizabeth.
+        </em>
+       </h2>
+       <p class="muted">
+        The calendar may say your birthday has passed, but someone as wonderful as you deserves to be celebrated beyond a single day. Welcome to your little corner of the universe.
+       </p>
+       <div class="actions">
+        <a class="btn" href="#apology">
+         Read my letter ✦
+        </a>
+        <a class="btn outline" href="#gift">
+         Find your gift &darr;
+        </a>
+       </div>
+      </div>
+      <div class="portrait">
+       <img alt="Elizabeth" src="assets/elizabeth-photo.jpg"/>
+       <div class="caption">
+        A queen deserves her own spotlight.
+       </div>
+      </div>
+     </header>
+     <section class="content" id="apology">
+      <div class="heading">
+       <div class="eyebrow">
+        First things first
+       </div>
+       <h3>
+        A genuine apology
+       </h3>
+       <p class="muted">
+        No excuses. Just something I should have said on Monday.
+       </p>
+      </div>
+      <article class="letter">
+       <h4>
+        Dear Elizabeth,
+       </h4>
+       <p>
+        I owe you a proper apology. I am genuinely sorry that I missed your birthday on Monday. I should have celebrated you on your special day, and I hate that my wish is arriving late.
+       </p>
+       <p>
+        Please know that forgetting the date doesn't mean I forgot how much you mean to me. You are honestly one of the best people I've had the pleasure of meeting, and I appreciate everything about you &mdash; your presence, your personality, your kindness, and all the little things that make you who you are.
+       </p>
+       <p>
+        We met online, but somehow you became someone I am genuinely grateful to have in my life. I'm thankful for the laughs, the conversations, and the friendship we've built. I hope this little website reminds you that you are valued and celebrated.
+       </p>
+       <p>
+        And yes, before I forget: I'm glad you left that so-called rider of yours to be mine. 😂 Some decisions really do deserve a royal award.
+       </p>
+       <p>
+        Happy belated birthday, Elizabeth. I hope this new year brings you beautiful opportunities, genuine happiness, answered prayers, good health, and countless reasons to smile. You deserve good things, always.
+       </p>
+       <div class="signature">
+        From your King ♛
+       </div>
+      </article>
+     </section>
+     <section class="content" id="story">
+      <div class="heading">
+       <div class="eyebrow">
+        A little royal history
+       </div>
+       <h3>
+        From online to unforgettable
+       </h3>
+       <p class="muted">
+        Funny how a meeting online can turn into a friendship worth celebrating.
+       </p>
+      </div>
+      <div class="grid">
+       <div class="card">
+        <div class="eyebrow">
+         My favourite plot twist
+        </div>
+        <h4>
+         The King &amp; His Queen
+        </h4>
+        <p class="muted">
+         We didn't need a palace or a grand introduction. We met online, kept talking, shared laughs, and somehow created our own little royal world.
+        </p>
+        <p class="quote">
+         &ldquo;I'm glad you left that so-called rider of yours to be mine.&rdquo;
+        </p>
+        <p class="muted">
+         Still one of the funniest lines in royal history. 😂
+        </p>
+       </div>
+       <div class="card">
+        <div class="eyebrow">
+         One thing I need you to know
+        </div>
+        <h4>
+         You are appreciated.
+        </h4>
+        <p class="muted">
+         If I had to describe you in one word, it would be
+         <strong style="color:#dceaff">
+          the best
+         </strong>
+         . I appreciate everything about you, Elizabeth. Never underestimate the joy your presence can bring to the people around you.
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="content" id="video">
+      <div class="heading">
+       <div class="eyebrow">
+        A moment worth keeping
+       </div>
+       <h3>
+        A little spotlight for you
+       </h3>
+       <p class="muted">
+        Because this celebration needed more than words.
+       </p>
+      </div>
+      <div class="video-card">
+       <video controls="" playsinline="" poster="assets/elizabeth-photo.jpg" preload="metadata">
+        <source src="assets/elizabeth-video.mp4" type="video/mp4"/>
+        Your browser does not support video playback.
+       </video>
+       <div class="video-caption">
+        Elizabeth's moment ✦
+       </div>
+      </div>
+     </section>
+     <section class="content" id="gift">
+      <div class="gift">
+       <div class="gift-icon">
+        🎁
+       </div>
+       <div class="eyebrow">
+        A little something from your King
+       </div>
+       <h3>
+        Your Royal Gift
+       </h3>
+       <p class="muted">
+        One last message is waiting for you. Ready?
+       </p>
+       <button id="openGift">
+        Open your royal gift ✨
+       </button>
+       <div class="reveal" id="reveal">
+        <div style="font-size:2rem">
+         💙👑
+        </div>
+        <h4 class="serif" style="font-size:1.65rem;margin:8px 0;color:#dceaff">
+         To my Queen, Elizabeth
+        </h4>
+        <p>
+         You may be receiving this birthday surprise a little late, but never doubt that you deserve to be celebrated. Thank you for being you, for the laughs, and for being such a wonderful part of my life.
+        </p>
+        <p class="serif" style="font-style:italic;color:#e8d19a">
+         Happy Birthday, my Queen. Here's to more memories, more laughter, and more royal mischief. ♛
+        </p>
+        <p style="margin-bottom:0;color:#9fbce9">
+         &mdash; Your King
+        </p>
+       </div>
+      </div>
+     </section>
+    </div>
+    <footer>
+     <div class="serif" style="font-style:italic;font-size:1.3rem;color:#d3e2ff;margin-bottom:8px">
+      Made just for Elizabeth ✦
+     </div>
+     A little late, but made with genuine appreciation.
+    </footer>
+   </div>
+  </main>
+  <div class="music" id="music">
+   <div class="disc">
+    ♫
+   </div>
+   <div class="music-info">
+    <strong>
+     In The Name Of Love
+    </strong>
+    <span id="musicStatus">
+     Birthday soundtrack &middot; Ready when you are
+    </span>
+   </div>
+   <button id="musicToggle">
+    ▶ Play
+   </button>
+  </div>
+  <div aria-live="polite" class="toast" id="toast" role="status">
+  </div>
+  <audio id="song" preload="none">
+   <source src="assets/In The Name Of Love.mp3" type="audio/mpeg"/>
+  </audio>
+  <script>
+   const welcome=document.getElementById('welcome'),experience=document.getElementById('experience'),music=document.getElementById('music');
+const song=document.getElementById('song'),toggle=document.getElementById('musicToggle'),status=document.getElementById('musicStatus'),toast=document.getElementById('toast');
+let timer;
+function notice(msg) {
+    toast.textContent=msg;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer=setTimeout(()=>toast.classList.remove('show'),3600)
+}
+document.getElementById('enter').addEventListener('click',()=> {
+    welcome.style.display='none';
+    experience.style.display='block';
+    music.style.display='flex';
+    window.scrollTo( {
+        top:0,behavior:'smooth'
+    }
+    )
+}
+);
+toggle.addEventListener('click',async()=> {
+    if(song.paused) {
+        try {
+            await song.play();
+            toggle.textContent='Ⅱ Pause';
+            status.textContent='Now playing · In The Name Of Love'
+        }
+        catch(e) {
+            status.textContent='Add the song file to assets';
+            notice('Add your legally obtained MP3 as assets/no-bad-grade.mp3 to enable music.')
+        }
+    }
+    else {
+        song.pause();
+        toggle.textContent='▶ Play';
+        status.textContent='Paused · Tap play whenever you like'
+    }
+}
+);
+song.addEventListener('ended',()=> {
+    toggle.textContent='▶ Play';
+    status.textContent='Finished · Play again?'
+}
+);
+song.addEventListener('error',()=> {
+    toggle.textContent='▶ Play';
+    status.textContent='Song file not added yet'
+}
+);
+document.getElementById('openGift').addEventListener('click',()=> {
+    document.getElementById('reveal').style.display='block';
+    document.getElementById('openGift').textContent='Your gift is open 💙';
+    document.getElementById('openGift').disabled=true;
+    document.getElementById('reveal').scrollIntoView( {
+        behavior:'smooth',block:'center'
+    }
+    )
+}
+);
+  </script>
+ </body>
+</html>
